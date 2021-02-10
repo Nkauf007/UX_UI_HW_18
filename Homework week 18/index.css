@@ -1,8 +1,9 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: objektiv-mk3, sans-serif;
 }
 
 .item1 { grid-area: header; }
+.hero{grid-area:hero;}
 .item2 { grid-area: mainOne; }
 .item3 { grid-area: mainTwo; }
 .item4 {grid-area:mainThree}
@@ -12,59 +13,82 @@ body {
 .item9 { grid-area: footer; }
 .item10 { grid-area: footerTwo; }
 
-.grid-container {
+.grid-container { width: auto; height: auto;
 display: grid;
+grid-template-rows: auto;
+  grid-template-columns: 70% auto;
 grid-template-areas:
-  'header header' 
-  'mainOne rightOne'
+  'header  header' 
+  'hero  hero'
+  'mainOne  rightOne'
   'mainTwo rightTwo'
-  'mainThree rightThree'
-  'footer footer'
-  'footerTwo footerTwo'
-  
-;
-grid-gap: 5px;
-background-color: #000000;
-padding: 10px;
-}
-.grid-container > div {
-background-color: rgba(255, 255, 255, 0.8);
-text-align: center;
-padding: 20px 0;
-font-size: 30px;
+  'mainThree   rightThree'
+  'footer  footer'
+  'footerTwo   footerTwo';
+grid-row-gap: 200px;
+background-color: #ffffff;
+
+
+    margin:50px; 
+    padding:50px; 
+    background-color:rgb(255, 255, 255); 
 }
 
-.logo { grid-area: a; }
-.social1 { grid-area: b; }
-.social2 { grid-area: c; }
-.social3 {grid-area:d}
-
-.item1{
-display:grid;
-  grid-template-areas: 
-    'a a a a a b c d'
-    ;
-grid-gap: 5px;
-background-color: #000000;
-padding: 10px;
-}
-.item1 > div {
-background-color: rgba(255, 255, 255, 0.8);
-text-align: center;
-padding: 20px 0;
-margin:20px;
-font-size: 30px;
+.item2 , .item3, .item4, .item5, .item6, .item7
+{
+    opacity:0;
 }
 
 
-.item5{display:flex;justify-content:center}
-.pineCone {  height:50%; width:50%;}
+
+.item1{display:inline-grid; 
+grid-template-columns:  70% auto auto auto;
+align-items: center;}
+
+.grid-container , .item1, .logo {margin-left: 40px;}
 
 
-.logo{}
-.social1{}
-.social2{}
-.social3{}
+.hero h {font-family: objektiv-mk1, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+font-size: 40px; }
+
+.hero{ width: 50%; margin-left: 200px; animation: slideMe 1.5s ease-in;
+ }
+
+@keyframes slideMe {
+  0% {transform: translate( -500px , 0px) ; }
+
+  100% {transform: translateY(0px , 0px);}
+
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+
+.underline {height: 10px; width: 150px; background-color: black;
+   justify-self: left; margin-top: 30px;}
+
+
+.item2 {align-self:initial; padding-left:10px; }
+.grid-container .item2 h {font-weight: bold; }
+
+.item5 {align-self: center; justify-self:center;}
+
+.item3 {align-self: initial; padding: left 10px; }
+.grid-container .item3 h {font-weight: bold;}
+
+.item6 {align-self: center; justify-self:center;}
+
+.item4 {align-self: initial; padding-left:10px; }
+.grid-container .item4 h {font-weight: bold;}
+
+.item7 {align-self: center; justify-self:center;}
+
+h{font-size: 25px; margin-left: 40px;}
+p{font-size: 20px;margin-left: 40px;}
+
 
 
 @media screen and (max-width:600px)
